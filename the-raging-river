@@ -1,0 +1,20 @@
+#include <iostream>
+#include <cstring>
+
+int main(int argc, char *argv[]) {
+    // Buffer of size 5 bytes
+    char buffer[5];
+
+    // Check for input argument
+    if (argc < 2) {
+        std::cout << "Usage: " << argv[0] << " <input_string>\n";
+        return 1;
+    }
+
+    // Copy input argument into buffer without bounds checking
+    // If input string length exceeds 5, it will overflow the buffer
+    strcpy(buffer, argv[1]);
+
+    std::cout << "Buffer content: " << buffer << std::endl;
+    return 0;
+}
